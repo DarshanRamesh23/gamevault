@@ -13,6 +13,9 @@ app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
 from routes.players import players_bp
 app.register_blueprint(players_bp, url_prefix='/api/v1/players')
 
+from routes.matches import matches_bp
+app.register_blueprint(matches_bp, url_prefix='/api/v1/matches')
+
 # Create tables on startup
 from models.player import create_players_table
 with app.app_context():
