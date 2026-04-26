@@ -16,6 +16,9 @@ app.register_blueprint(players_bp, url_prefix='/api/v1/players')
 from routes.matches import matches_bp
 app.register_blueprint(matches_bp, url_prefix='/api/v1/matches')
 
+from routes.redis_leaderboard import redis_lb_bp
+app.register_blueprint(redis_lb_bp, url_prefix='/api/v1/leaderboard')
+
 # Create tables on startup
 from models.player import create_players_table
 with app.app_context():
