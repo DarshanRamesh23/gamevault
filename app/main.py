@@ -10,6 +10,9 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 from routes.auth import auth_bp
 app.register_blueprint(auth_bp, url_prefix='/api/v1/auth')
 
+from routes.players import players_bp
+app.register_blueprint(players_bp, url_prefix='/api/v1/players')
+
 # Create tables on startup
 from models.player import create_players_table
 with app.app_context():
